@@ -1,0 +1,112 @@
+/* Define global variables for the theme */
+:root {
+  /* Colors */
+  --primary-color: #007BFF;           /* Blue */
+  --secondary-color: #6C757D;         /* Gray */
+  --background-color: #F8F9FA;        /* Light background */
+  --text-color: #333333;              /* Dark text */
+  --button-color: #FF5733;            /* Button color */
+  --button-hover-color: #C13F22;      /* Button hover color */
+
+  /* Typography */
+  --font-family: 'Arial', sans-serif;
+  --font-size-small: 12px;
+  --font-size-medium: 14px;
+  --font-size-large: 16px;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  /* Spacing */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+}
+
+/* General container style */
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: var(--space-lg);
+}
+
+/* Header style */
+h1 {
+  text-align: center;
+  font-size: var(--font-size-large);
+  color: var(--primary-color);
+}
+
+/* Interaction List Styles */
+.interaction-list {
+  margin-top: var(--space-md);
+}
+
+/* Interaction Item (individual entry) style */
+.interaction-item {
+  background-color: var(--background-color);
+  padding: var(--space-sm);
+  margin: var(--space-sm) 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for better separation */
+}
+
+/* Button style */
+button {
+  background-color: var(--button-color);
+  color: white;
+  border: none;
+  padding: var(--space-xs) var(--space-sm);
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: var(--font-weight-bold);
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--button-hover-color);
+}
+
+/* Filter Section */
+.filter {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+/* Input, Select, Textarea components */
+input, select, textarea {
+  padding: var(--space-xs);
+  margin: var(--space-xs);
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: var(--font-size-medium);
+}
+
+/* Focus styles for inputs */
+input:focus, textarea:focus, select:focus {
+  outline-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Custom styles for textareas */
+textarea {
+  resize: vertical; /* Allows users to resize vertically */
+  min-height: 80px; /* Set a minimum height */
+}
+
+/* Responsive Design: */
+@media (max-width: 768px) {
+  .container {
+    width: 90%; /* Reduce the container width for smaller screens */
+  }
+
+  .filter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .interaction-item {
+    font-size: var(--font-size-small); /* Smaller font size for smaller devices */
+  }
+}
