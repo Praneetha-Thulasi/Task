@@ -1,0 +1,54 @@
+/* InteractionList.css */
+.interaction-list-container {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .history-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .history-button:hover {
+    background-color: #2980b9;
+  }
+  
+  .history-button:active {
+    background-color: #2471a3;
+    transform: scale(0.98); /* Slight shrink effect */
+  }
+  
+  .interaction-list {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    max-height: 300px; /* Optional: Add scrolling if the list is long */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .interaction-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .interaction-item:last-child {
+    border-bottom: none;
+  }
+  
+  .interaction-item p {
+    margin: 5px 0;
+    color: #333;
+  }
+  

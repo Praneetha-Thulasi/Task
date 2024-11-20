@@ -1,38 +1,224 @@
-.App {
+/* App.css */
+.app-container {
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  max-width: 950px;
+  margin: 0 auto;
   text-align: center;
+  background-color: #ecf0f1; /* Light gray background */
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+  overflow: hidden; /* Prevents scrollbars */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Heading */
+h1 {
+  text-align: center;
+  color: #2c3e50; /* Dark blue-gray */
+  font-size: 3rem;
+  margin-bottom: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Add Interaction Button */
+.add-button {
+  background-color: #ff5722; /* Vivid orange */
   color: white;
+  padding: 18px 35px;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 40px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-.App-link {
-  color: #61dafb;
+/* Hover effect for Add Interaction button */
+.add-button:hover {
+  background-color: #e64a19; /* Darker orange on hover */
+  transform: scale(1.05); /* Slightly scale up */
 }
 
-@keyframes App-logo-spin {
+.add-button:active {
+  background-color: #d84315; /* Even darker on click */
+  transform: scale(0.98); /* Shrink effect */
+}
+
+/* Filter Bar Container */
+.filter-bar-container {
+  background: linear-gradient(to bottom, #ff6b81, #8e44ad); /* Pink to purple gradient */
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+
+/* Filter Bar Heading */
+.filter-bar-container h2 {
+  font-size: 1.7rem;
+  margin-bottom: 15px;
+  color: #fff; /* Soft coral for a harmonious look */
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
+/* Filter bar layout */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Filter Inputs */
+.filter-input,
+.filter-select {
+  flex: 1;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #3498db; /* Blue border */
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+/* Placeholder for inputs */
+.filter-input::placeholder,
+.filter-select::placeholder {
+  color: #bdc3c7; /* Subtle gray for placeholder */
+  font-style: italic;
+}
+
+/* Hover and focus effects */
+.filter-input:focus,
+.filter-select:focus {
+  border-color: #9b59b6; /* Purple on focus */
+  box-shadow: 0 0 8px rgba(155, 89, 182, 0.5);
+  outline: none;
+}
+
+/* Filter Button */
+.filter-button {
+  background-color: #3498db; /* Blue background */
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  flex-basis: 100%;
+  margin-top: 20px;
+}
+
+/* Hover effect for filter button */
+.filter-button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+  transform: scale(1.05);
+}
+
+/* Interaction List */
+.interaction-list-container {
+  margin-top: 30px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* History Button */
+.history-button {
+  background-color: #2ecc71; /* Green for success */
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.history-button:hover {
+  background-color: #27ae60; /* Darker green on hover */
+  transform: scale(1.05); /* Slight scale effect */
+}
+
+/* Interaction List Styling */
+.interaction-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #f7f7f7; /* Light gray */
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.interaction-item {
+  padding: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.interaction-item:last-child {
+  border-bottom: none;
+}
+
+.interaction-item p {
+  margin: 8px 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.interaction-item strong {
+  color: #3498db; /* Blue for labels */
+}
+
+
+/* Modal for Add Interaction */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #f5f5dc; /* Beige or cream for subtle elegance */
+  padding: 30px;
+  border-radius: 12px;
+  width: 450px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  animation: modalFadeIn 0.5s ease-in-out;
+}
+
+
+
+/* Animation for modal */
+@keyframes modalFadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(-20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

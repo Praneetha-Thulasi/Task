@@ -1,0 +1,92 @@
+/* Filter.css */
+.filter-bar-container {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #ffffff; /* Pure white for a clean look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .filter-bar-container h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2c3e50; /* Dark blue-gray for heading */
+    font-weight: 600;
+    font-family: "Roboto", sans-serif; /* Clean font for heading */
+  }
+  
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  
+  .filter-input,
+  .filter-select {
+    flex: 1;
+    padding: 10px;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, font-size 0.3s ease;
+    font-family: "Roboto", sans-serif; /* Consistent font style */
+  }
+  
+  .filter-input::placeholder,
+  .filter-select::placeholder {
+    font-size: 0.9rem; /* Adjust placeholder text size to match input size */
+    color: #aaa; /* Subtle gray color for placeholder text */
+    font-style: italic; /* Optional: italic for a modern touch */
+  }
+  
+  .filter-input:focus,
+  .filter-select:focus {
+    border-color: #3498db; /* Light blue border on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Glow effect */
+  }
+  
+  .filter-button {
+    background-color: #3498db; /* Light blue */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    font-size: 0.8rem; /* Slightly smaller font size for buttons */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: "Roboto", sans-serif; /* Uniform font style */
+    text-align: center;
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+  
+  .filter-button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+  }
+  
+  .filter-button:active {
+    background-color: #2471a3;
+    transform: scale(0.95); /* Slightly shrink on click */
+  }
+  
+  @media (max-width: 768px) {
+    .filter-bar {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .filter-input,
+    .filter-select,
+    .filter-button {
+      width: 100%;
+    }
+  
+    .filter-input::placeholder,
+    .filter-select::placeholder {
+      font-size: 0.85rem; /* Adjust placeholder font size for smaller screens */
+    }
+  }
+  

@@ -1,32 +1,41 @@
-// InteractionList.js
-import React from "react";
-import axios from "axios";
-import InteractionItem from "./InteractionItem";
+import React, { useState } from "react";
+import "./InteractionList.css"; // Add your styles here
 
-const InteractionList = ({ interactions, setInteractions }) => {
-  const deleteInteraction = (id) => {
-    // Send DELETE request to backend
-    axios
-      .delete(`http://localhost:5000/api/interactions/${id}`)
-      .then(() => {
-        // Remove the deleted interaction from state
-        setInteractions(interactions.filter((interaction) => interaction._id !== id));
-      })
-      .catch((error) => {
-        console.error("Error deleting interaction:", error);
-        alert("Failed to delete the interaction");
-      });
+const InteractionList = ({ interactions }) => {
+  const [isOpen, setIsOpen] = useState(false); // State to toggle visibility
+
+  const toggleHistory = () => {
+    setIsOpen(!isOpen); // Toggle the isOpen state
   };
 
   return (
-    <div className="interaction-list">
-      {interactions.map((interaction) => (
-        <InteractionItem
-          key={interaction._id}
-          interaction={interaction}
-          deleteInteraction={deleteInteraction}
-        />
-      ))}
+    <div className="interaction-list-container">
+      {/* History Button */}
+      <button className="history-button" onClick={toggleHistory}>
+        {isOpen ? "Hide History" : "Show History"}
+      </button>
+
+      {/* Interaction List */}
+      {isOpen && (
+        <ul className="interaction-list">
+          {interactions.map((interaction) => (
+            <li key={interaction._id} className="interaction-item">
+              <p>
+                <strong>Type:</strong> {interaction.type}
+              </p>
+              <p>
+                <strong>Date:</strong> {new Date(interaction.date).toLocaleDateString()}
+              </p>
+              <p>
+                <strong>User:</strong> {interaction.user}
+              </p>
+              <p>
+                <strong>Notes:</strong> {interaction.notes}
+              </p>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
